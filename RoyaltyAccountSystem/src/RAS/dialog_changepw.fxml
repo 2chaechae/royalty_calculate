@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="200.0" prefWidth="320.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="RAS.LoginController">
+   <children>
+      <TextField fx:id="txtid" layoutX="154.0" layoutY="26.0" />
+      <Label layoutX="38.0" layoutY="59.0" text="현재 비밀번호" />
+      <Label layoutX="38.0" layoutY="90.0" text="변경 비밀번호" />
+      <Label layoutX="38.0" layoutY="122.0" text="변경 비밀번호 확인" />
+      <PasswordField fx:id="txtnowpw" layoutX="154.0" layoutY="56.0" />
+      <PasswordField fx:id="txtnewpw" layoutX="154.0" layoutY="87.0" />
+      <PasswordField fx:id="txtnewpwcheck" layoutX="154.0" layoutY="118.0" />
+      <Button fx:id="btnchange" layoutX="99.0" layoutY="158.0" mnemonicParsing="false" onAction="#handlebtchangeAction" text="변경" />
+      <Button fx:id="btncancel" layoutX="166.0" layoutY="158.0" mnemonicParsing="false" onAction="#handlebtcancelAction" text="취소" />
+      <Label layoutX="38.0" layoutY="31.0" text="아이디" />
+   </children>
+</AnchorPane>

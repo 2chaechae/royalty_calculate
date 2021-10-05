@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="loginback" prefHeight="150.0" prefWidth="280.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="RAS.LoginController">
+   <children>
+      <Label layoutX="62.0" layoutY="32.0" text="ID">
+         <font>
+            <Font name="Consolas" size="13.0" />
+         </font>
+      </Label>
+      <Label layoutX="55.0" layoutY="67.0" text="PASS">
+         <font>
+            <Font name="Consolas" size="13.0" />
+         </font>
+      </Label>
+      <TextField fx:id="tfid" layoutX="104.0" layoutY="29.0" prefHeight="23.0" prefWidth="120.0" />
+      <Button fx:id="btnlogin" layoutX="148.0" layoutY="99.0" mnemonicParsing="false" onAction="#handleBtnloginAction" prefHeight="27.0" prefWidth="62.0" text="로그인">
+         <font>
+            <Font name="Consolas Bold" size="12.0" />
+         </font>
+      </Button>
+      <PasswordField fx:id="passwd" layoutX="104.0" layoutY="64.0" prefHeight="23.0" prefWidth="120.0" />
+      <Button fx:id="btnchangepw" layoutX="73.0" layoutY="99.0" mnemonicParsing="false" onAction="#handleBtnchangpwAction" prefHeight="27.0" prefWidth="62.0" text="PW 변경">
+         <font>
+            <Font name="Consolas Bold" size="12.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>

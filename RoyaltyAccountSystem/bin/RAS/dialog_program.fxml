@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="300.0" prefWidth="400.0" style="-fx-background-color: #ced3d3;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="RAS.Dialog_programController">
+   <children>
+      <TextField fx:id="txtipcode" disable="true" layoutX="39.0" layoutY="24.0" prefHeight="23.0" prefWidth="160.0" promptText="IP CODE" />
+      <TextField fx:id="txtprogramn" layoutX="209.0" layoutY="24.0" prefHeight="23.0" prefWidth="150.0" promptText="프로그램명" />
+      <Button fx:id="btmprogramadd" layoutX="270.0" layoutY="60.0" mnemonicParsing="false" onAction="#handelbtmprogramadd" text="등록" />
+      <Button fx:id="btmprogramok" layoutX="182.0" layoutY="265.0" mnemonicParsing="false" onAction="#handelbtmprogramokAction" text="확인" />
+      <Button fx:id="programsearch" layoutX="319.0" layoutY="60.0" mnemonicParsing="false" onAction="#handleprogramsearch" text="조회" />
+      <TableView fx:id="tbprogram" layoutX="28.0" layoutY="92.0" prefHeight="171.0" prefWidth="342.0">
+        <columns>
+          <TableColumn fx:id="Cipcode" prefWidth="55.0" text="IPCODE" />
+          <TableColumn fx:id="Cprogram" prefWidth="114.33331298828125" text="프로그램명" />
+            <TableColumn fx:id="Cstar" prefWidth="95.66668701171875" text="시작일자" />
+            <TableColumn fx:id="Cend" prefWidth="75.0" text="만료일자" />
+        </columns>
+      </TableView>
+   </children>
+</AnchorPane>

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="530.0" prefWidth="818.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="RAS.customerController">
+   <children>
+      <TextField fx:id="txtcstsearch" layoutX="52.0" layoutY="28.0" prefHeight="21.0" prefWidth="145.0" style="-fx-background-color: WHITE; -fx-border-color: #acb8b8;" />
+      <Button fx:id="btncussearch" layoutX="205.0" layoutY="28.0" mnemonicParsing="false" onAction="#handlebtncussearchAction" text="조회" />
+      <AnchorPane layoutX="110.0" layoutY="369.0" prefHeight="147.0" prefWidth="594.0">
+         <children>
+            <TextField fx:id="txtcuscode" disable="true" layoutX="25.0" layoutY="40.0" prefHeight="23.0" prefWidth="128.0" promptText="거래처코드" />
+            <TextField fx:id="txtcusname" layoutX="158.0" layoutY="40.0" prefHeight="23.0" prefWidth="165.0" promptText="상호명" />
+            <TextField fx:id="txtcusaddress" layoutX="208.0" layoutY="72.0" prefHeight="23.0" prefWidth="355.0" promptText="주소" />
+            <TextField fx:id="txtcusemail" layoutX="27.0" layoutY="105.0" prefHeight="23.0" prefWidth="166.0" promptText="EMAIL" />
+            <Button fx:id="btncusadd" layoutX="493.0" layoutY="8.0" mnemonicParsing="false" onAction="#handlebtncusaddAction" text="등록" />
+            <Button fx:id="btncusmodify" disable="true" layoutX="539.0" layoutY="8.0" mnemonicParsing="false" onAction="#handlebtncusmodifyAction" text="수정" />
+            <TextField fx:id="txtcuscopnum" layoutX="331.0" layoutY="40.0" prefHeight="23.0" prefWidth="177.0" promptText="사업자등록번호" />
+            <TextField fx:id="txtcusphone" layoutX="26.0" layoutY="72.0" prefHeight="23.0" prefWidth="167.0" promptText="전화번호" />
+            <TextField fx:id="txtcusbank" layoutX="208.0" layoutY="105.0" prefHeight="23.0" prefWidth="81.0" promptText="은행명" />
+            <TextField fx:id="txtcusown" layoutX="296.0" layoutY="105.0" prefHeight="23.0" prefWidth="76.0" promptText="예금주" />
+            <TextField fx:id="txtcusaccount" layoutX="378.0" layoutY="105.0" prefHeight="23.0" prefWidth="183.0" promptText="계좌번호" />
+            <RadioButton fx:id="radiovendor" layoutX="27.0" layoutY="12.0" mnemonicParsing="false" text="매출거래처">
+               <toggleGroup>
+                  <ToggleGroup fx:id="radioinout" />
+               </toggleGroup>
+            </RadioButton>
+            <RadioButton fx:id="radioPO" layoutX="121.0" layoutY="12.0" mnemonicParsing="false" text="매입거래처" toggleGroup="$radioinout" />
+            <CheckBox fx:id="check" layoutX="482.0" layoutY="44.0" mnemonicParsing="false" onAction="#checkcopnum" />
+            <CheckBox fx:id="foreign" layoutX="517.0" layoutY="43.0" mnemonicParsing="false" text="해외" />
+         </children>
+         <padding>
+            <Insets left="10.0" right="10.0" />
+         </padding>
+      </AnchorPane>
+      <TableView fx:id="tvcustomer" layoutX="52.0" layoutY="72.0" onMouseClicked="#handleclickeditemsAction" prefHeight="273.0" prefWidth="727.0">
+        <columns>
+          <TableColumn fx:id="Cvopo" prefWidth="75.0" style="-fx-alignment: center;" text="구분" />
+          <TableColumn fx:id="Ccuscode" prefWidth="75.0" style="-fx-alignment: center;" text="거래처코드" />
+            <TableColumn fx:id="Ccusname" prefWidth="75.0" style="-fx-alignment: center;" text="상호명" />
+            <TableColumn fx:id="Ccuscopnum" prefWidth="75.0" style="-fx-alignment: center;" text="사업자등록번호" />
+            <TableColumn fx:id="Ccusphone" prefWidth="75.0" style="-fx-alignment: center;" text="전화" />
+            <TableColumn fx:id="Ccusaddress" prefWidth="75.0" style="-fx-alignment: center;" text="주소" />
+            <TableColumn fx:id="Ccusemail" prefWidth="75.0" style="-fx-alignment: center;" text="EMAIL" />
+            <TableColumn fx:id="Ccusbank" prefWidth="75.0" style="-fx-alignment: center;" text="은행" />
+            <TableColumn fx:id="Ccusown" prefWidth="75.0" style="-fx-alignment: center;" text="예금주" />
+            <TableColumn fx:id="Ccusaccount" prefWidth="75.0" style="-fx-alignment: center;" text="계좌번호" />
+            <TableColumn fx:id="Cforeign" prefWidth="75.0" style="-fx-alignment: center;" text="혜외" />
+        </columns>
+      </TableView>
+      <Separator layoutX="57.0" layoutY="362.0" prefHeight="0.0" prefWidth="720.0" />
+      <Button layoutX="724.0" layoutY="30.0" mnemonicParsing="false" onAction="#handlecustPR" text="Reset" />
+   </children>
+</AnchorPane>

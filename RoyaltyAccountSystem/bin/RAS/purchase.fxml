@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="530.0" prefWidth="818.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="RAS.purchaseController">
+   <children>
+      <TableView fx:id="tvpurchase" layoutX="51.0" layoutY="82.0" prefHeight="402.0" prefWidth="717.0">
+        <columns>
+          <TableColumn fx:id="Cpurchasenum" prefWidth="75.0" style="-fx-alignment: center;" text="매출전표번호" />
+          <TableColumn fx:id="CpurchaseSdate" prefWidth="75.0" style="-fx-alignment: center;" text="매출일자" />
+            <TableColumn fx:id="CpurchasetitleC" prefWidth="75.0" style="-fx-alignment: center;" text="타이틀코드" />
+            <TableColumn fx:id="CpurchasetitleN" prefWidth="75.0" style="-fx-alignment: center;" text="타이틀명" />
+            <TableColumn fx:id="Cpurchasecurr" prefWidth="75.0" style="-fx-alignment: center;" text="통화" />
+            <TableColumn fx:id="CpurchaseSprice" prefWidth="75.0" style="-fx-alignment: center;" text="매출액" />
+            <TableColumn fx:id="CpurchaseSpricewon" prefWidth="75.0" style="-fx-alignment: center;" text="매출액원화" />
+            <TableColumn fx:id="Cpurchasesep" prefWidth="75.0" style="-fx-alignment: center;" text="매입처구분" />
+            <TableColumn fx:id="Cpurchasecode" prefWidth="75.0" style="-fx-alignment: center;" text="매입처코드" />
+            <TableColumn fx:id="CpurchasecodeN" prefWidth="75.0" style="-fx-alignment: center;" text="매입처명" />
+            <TableColumn fx:id="CpurchaseRoyalty" prefWidth="75.0" style="-fx-alignment: center;" text="로열티율" />
+            <TableColumn fx:id="Cpurchaseprice" prefWidth="75.0" style="-fx-alignment: center;" text="지급액" />
+            <TableColumn fx:id="Cpurchasepricevat" prefWidth="75.0" style="-fx-alignment: center;" text="지급VAT" />
+            <TableColumn fx:id="Cpurchasewriter" prefWidth="75.0" style="-fx-alignment: center;" text="작성자" />
+        </columns>
+      </TableView>
+      <Button fx:id="btnpurchasesearch" layoutX="597.0" layoutY="21.0" mnemonicParsing="false" onAction="#handlesearchpurchase" text="조회" />
+      <Button fx:id="btnpurchasecreate" layoutX="647.0" layoutY="21.0" mnemonicParsing="false" onAction="#handlecreatepurchase" text="전표생성" />
+      <DatePicker fx:id="dppurchasedocdate" layoutX="51.0" layoutY="21.0" promptText="전표일자" />
+      <DatePicker fx:id="dppurchasedate" layoutX="222.0" layoutY="21.0" promptText="작성일자" />
+      <Separator layoutY="59.0" prefHeight="3.0" prefWidth="818.0" />
+      <Button fx:id="btnpurchasePR" layoutX="718.0" layoutY="21.0" mnemonicParsing="false" onAction="#handleclearpuchase" text="Reset" />
+      <TextField fx:id="tatalpurchase" layoutX="626.0" layoutY="493.0" promptText="매입합계" />
+   </children>
+</AnchorPane>

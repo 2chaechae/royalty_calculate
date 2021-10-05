@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="530.0" prefWidth="818.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="RAS.salesController">
+   <children>
+      <TextField fx:id="txtsalescontnum" layoutX="41.0" layoutY="34.0" promptText="계약번호" />
+      <Button fx:id="btnsearchdata" layoutX="186.0" layoutY="33.0" mnemonicParsing="false" onAction="#handlebtnsalessearch" text="조회" />
+      <Button fx:id="btnsalescreate" layoutX="668.0" layoutY="39.0" mnemonicParsing="false" onAction="#handlebtnsalescreate" text="전표생성" />
+      <DatePicker fx:id="dpsalesdate" layoutX="444.0" layoutY="312.0" prefHeight="23.0" prefWidth="139.0" promptText="전표일자" />
+      <DatePicker fx:id="dpsalesdocdate" layoutX="594.0" layoutY="312.0" prefHeight="23.0" prefWidth="140.0" promptText="증빙일자" />
+      <TextField fx:id="txtsalesnum" disable="true" layoutX="117.0" layoutY="312.0" prefHeight="23.0" prefWidth="138.0" promptText="전표번호" />
+      <Separator layoutX="1.0" layoutY="344.0" prefHeight="6.0" prefWidth="818.0" />
+      <AnchorPane layoutX="77.0" layoutY="358.0" prefHeight="114.0" prefWidth="684.0" style="-fx-border-radius: 30;">
+         <children>
+            <TextField fx:id="txtsalescuscode" disable="true" layoutX="42.0" layoutY="9.0" prefHeight="23.0" prefWidth="128.0" promptText="거래처코드" />
+            <TextField fx:id="txtsalescusN" disable="true" layoutX="182.0" layoutY="9.0" prefHeight="23.0" prefWidth="151.0" promptText="거래처명" />
+            <TextField fx:id="txtsalestitleC" disable="true" layoutX="346.0" layoutY="9.0" prefHeight="23.0" prefWidth="133.0" promptText="타이틀코드" />
+            <TextField fx:id="txtsalestitleN" disable="true" layoutX="496.0" layoutY="9.0" prefHeight="23.0" prefWidth="163.0" promptText="타이틀명" />
+            <ComboBox fx:id="cbsalesCD" layoutX="42.0" layoutY="44.0" onAction="#setCD" prefHeight="23.0" prefWidth="67.0" promptText="차대" />
+            <ComboBox fx:id="cbsalesAccountN" layoutX="120.0" layoutY="44.0" prefHeight="23.0" prefWidth="141.0" promptText="계정" />
+            <ComboBox fx:id="cbsalesVatC" layoutX="270.0" layoutY="44.0" prefHeight="23.0" prefWidth="141.0" promptText="VATcode" />
+            <TextField fx:id="txtsalesVat" disable="true" layoutX="423.0" layoutY="44.0" prefHeight="23.0" prefWidth="140.0" promptText="VAT" />
+            <TextField fx:id="txtsalesWt" disable="true" layoutX="569.0" layoutY="44.0" prefHeight="23.0" prefWidth="88.0" promptText="작성자" />
+            <ComboBox fx:id="cbsalesCurr" layoutX="42.0" layoutY="79.0" onAction="#setcurrency" prefHeight="23.0" prefWidth="67.0" promptText="통화" />
+            <TextField fx:id="txtsalesrate" layoutX="123.0" layoutY="79.0" prefHeight="23.0" prefWidth="69.0" promptText="환율" />
+            <TextField fx:id="txtsalesprice" layoutX="205.0" layoutY="79.0" prefHeight="23.0" prefWidth="149.0" promptText="매출액" />
+            <TextField fx:id="txtsaleswon" layoutX="365.0" layoutY="79.0" onMouseClicked="#culcprice" prefHeight="18.0" prefWidth="143.0" promptText="매출원화" />
+            <TextField fx:id="extra" disable="true" layoutX="521.0" layoutY="78.0" prefHeight="23.0" prefWidth="138.0" promptText="차대차액" />
+         </children>
+      </AnchorPane>
+      <TableView fx:id="tvsales" layoutX="40.0" layoutY="80.0" onMouseClicked="#handletvclickAction" prefHeight="215.0" prefWidth="755.0">
+        <columns>
+            <TableColumn fx:id="CsalesCD" prefWidth="75.0" style="-fx-alignment: center;" text="차대" />
+          	<TableColumn fx:id="Csalesdocdate" prefWidth="75.0" style="-fx-alignment: center;" text="증빙일자" />
+            <TableColumn fx:id="Csalesdate" prefWidth="75.0" style="-fx-alignment: center;" text="전표일자" />
+            <TableColumn fx:id="CsalesaccountN" prefWidth="75.0" style="-fx-alignment: center;" text="계정명" />
+            <TableColumn fx:id="Csalescuscode" prefWidth="75.0" style="-fx-alignment: center;" text="거래처코드" />
+            <TableColumn fx:id="CsalescusN" prefWidth="75.0" style="-fx-alignment: center;" text="거래처명" />
+            <TableColumn fx:id="CsalestitleC" prefWidth="75.0" style="-fx-alignment: center;" text="타이틀코드" />
+            <TableColumn fx:id="CsalestitleN" prefWidth="75.0" style="-fx-alignment: center;" text="타이틀명" />
+            <TableColumn fx:id="Csalesprice" prefWidth="75.0" style="-fx-alignment: center;" text="매출액" />
+            <TableColumn fx:id="Csalescurrency" prefWidth="75.0" style="-fx-alignment: center;" text="통화" />
+            <TableColumn fx:id="Csalesrate" prefWidth="75.0" style="-fx-alignment: center;" text="환율" />
+            <TableColumn fx:id="Csaleswon" prefWidth="75.0" style="-fx-alignment: center;" text="매출원화액" />
+            <TableColumn fx:id="CsalesVatC" prefWidth="75.0" style="-fx-alignment: center;" text="VATCODE" />
+            <TableColumn fx:id="CsalesVat" prefWidth="75.0" style="-fx-alignment: center;" text="VAT" />
+            <TableColumn fx:id="CsalesWriter" prefWidth="75.0" style="-fx-alignment: center;" text="작성자" />
+            <TableColumn fx:id="CsaleswriteP" prefWidth="75.0" style="-fx-alignment: center;" text="매입작성여부" />
+        </columns>
+      </TableView>
+      <Button fx:id="btnsalesadd" layoutX="377.0" layoutY="474.0" mnemonicParsing="false" onAction="#handlebtnsalesadd" text="등록" />
+      <Button fx:id="btnsalesdelete" disable="true" layoutX="433.0" layoutY="474.0" mnemonicParsing="false" onAction="#handlebtnsalesdelete" text="삭제" />
+      <Button layoutX="738.0" layoutY="39.0" mnemonicParsing="false" onAction="#handlesalesPR" text="Reset" />
+   </children>
+</AnchorPane>
